@@ -2,6 +2,21 @@
 <link href="{{asset('css')}}/app.css" rel="stylesheet" />
 <link href="{{asset('css')}}/style.css" rel="stylesheet" />
 
+<link href="{{ URL::asset('/backend/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('/backend/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="{{ URL::asset('/backend/build/css/custom.min.css') }}" rel="stylesheet">
+  <!-- Datatables -->
+  <link rel="stylesheet" href="{{ URL::asset('/backend/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+  <style>
+        .sweety{
+            background-color: #212529;
+        }
+
+       
+    </style>
+
 <!-- Bootstrap core CSS     -->
 <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet" />
 
