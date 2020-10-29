@@ -8,7 +8,7 @@
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'base64:Wb5ZZhGFlHiiJwvejhtE4PbiJBPTfUWZIFbLTCmvqRI=',
+    'key' => 'base64:GBlNtN6pCxpAqyphiGrrGcPE9KaP6s9dFnU3nLrviX8=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/framework/cache/data',
+        'path' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -294,9 +294,9 @@
   'crudgenerator' => 
   array (
     'custom_template' => false,
-    'path' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/',
-    'route' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/routes/web.php',
-    'viewMasterPath' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/views/backLayout/',
+    'path' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources/',
+    'route' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\routes/web.php',
+    'viewMasterPath' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources/views/backLayout/',
   ),
   'database' => 
   array (
@@ -306,17 +306,17 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'gvoyage2',
+        'database' => 'gvoyage',
         'prefix' => '',
       ),
       'mysql' => 
       array (
         'driver' => 'mysql',
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '5432',
-        'database' => 'gvoyage2',
-        'username' => 'macbookpro',
-        'password' => '',
+        'database' => 'gvoyage',
+        'username' => 'ibrahim',
+        'password' => 'ibrahim',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -327,11 +327,11 @@
       'pgsql' => 
       array (
         'driver' => 'pgsql',
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '5432',
-        'database' => 'gvoyage2',
-        'username' => 'macbookpro',
-        'password' => '',
+        'database' => 'gvoyage',
+        'username' => 'ibrahim',
+        'password' => 'ibrahim',
         'charset' => 'utf8',
         'prefix' => '',
         'schema' => 'public',
@@ -360,12 +360,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/app',
+        'root' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/app/public',
+        'root' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -446,7 +446,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/views/vendor/mail',
+        0 => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -526,7 +526,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/framework/sessions',
+    'files' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -545,9 +545,9 @@
   array (
     'paths' => 
     array (
-      0 => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/views',
+      0 => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources\\views',
     ),
-    'compiled' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/framework/views',
+    'compiled' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\framework\\views',
   ),
   'cors' => 
   array (

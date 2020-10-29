@@ -11,7 +11,7 @@ export function get_connected_user_role(callback = null) {
 }
 
 export function is_admin() {
-    return user_role === 'Admin';
+    return user_role === 'Admin' ;
 }
 
 export function is_partenaire() {
@@ -25,3 +25,4 @@ export function is_agent() {
 export function is_controlleur() {
     return user_role === 'Controleur';
 }
+

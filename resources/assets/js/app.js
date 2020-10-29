@@ -231,6 +231,18 @@ Vue.component('liste-location', require('./components/location/listComponent'));
 Vue.component('create-location', require('./components/location/CreateComponent'));
 Vue.component('detail-location', require('./components/location/detailComponent'));
 Vue.component('multiple-image', require('./components/location/multipleImage'));
+/**
+ *
+ * vidila
+ */
+
+Vue.component('index-voyage-partenaire' , require('./components/voyagePartenaire/indexComponent'));
+Vue.component('update-voyage-partenaire' , require('./components/voyagePartenaire/updateComponent'));
+Vue.component('create-voyage-partenaire' , require('./components/voyagePartenaire/createComponent'));
+Vue.component('detail-voyage-partenaire' , require('./components/voyagePartenaire/detailComponent'));
+Vue.component('liste-voyage-partenaire' , require('./components/voyagePartenaire/listeComponent'));
+Vue.component('imageComponent' , require('./components/voyagePartenaire/imageComponent'));
+
 
 
 /**
@@ -286,6 +298,24 @@ Vue.component('multiple-image', require('./components/location/multipleImage'));
  Vue.component('create', require('./components/annonce/Create.vue'));
  Vue.component('edit', require('./components/annonce/Edit.vue'));
  Vue.component('show', require('./components/annonce/Show.vue'));
+
+
+ 
+//Location vidila
+
+Vue.component('location-partenaire', require('./components/locationPartenaire/IndexComponent'));
+Vue.component('liste-location-partenaire', require('./components/locationPartenaire/listComponent'));
+Vue.component('create-location-partenaire', require('./components/locationPartenaire/CreateComponent'));
+Vue.component('detail-location-partenaire', require('./components/locationPartenaire/detailComponent'));
+Vue.component('multiple-image-partenaire', require('./components/locationPartenaire/multipleImage'));
+
+Vue.component('location', require('./components/location/IndexComponent'));
+Vue.component('liste-location', require('./components/location/listComponent'));
+Vue.component('create-location', require('./components/location/CreateComponent'));
+Vue.component('detail-location', require('./components/location/detailComponent'));
+Vue.component('multiple-image', require('./components/location/multipleImage'));
+
+
 
  
 const router = new VueRouter({mode: 'history'});

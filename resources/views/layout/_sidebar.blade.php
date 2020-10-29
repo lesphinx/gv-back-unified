@@ -92,20 +92,20 @@
                 </div>
                 @endif
 
-                @if($user->inRole('partenaire') || $user->inRole('controlleur') || $user->inRole('technicien'))
+                @if($user->inRole('partenaire') || $user->inRole('Partenaire') || $user->inRole('controlleur') || $user->inRole('technicien'))
                 <div class="collapse " id="pagesExamples">
                     <ul class="nav">
 
                       
 
                         <li class="text-center">
-                            <a href="{{ route('pages.voyage')}}">
+                            <a href="{{ route('pages.voyage-partenaire')}}">
                                 <span class="sidebar-normal"> Voyage </span>
                             </a>
                         </li>
 
                         <li class="text-center">
-                            <a href="{{route('pages.location')}}">
+                            <a href="{{route('pages.location-partenaire')}}">
                                 <span class="sidebar-normal"> Location </span>
                             </a>
                         </li>
@@ -227,7 +227,7 @@
                             </a>
                             </li>
                         @endif
-                        @if($user->inRole('partenaire'))
+                        @if($user->inRole('partenaire') || $user->inRole('Partenaire'))
                             <li >
                             <a href="{{ route('pages.client') }}">
                                 <span class="sidebar-normal"> Clients </span>
@@ -253,7 +253,7 @@
                                 <li><a href="#level1_1">Mon compte</a></li>
 
 
-                                @if($user->inRole('partenaire'))
+                                @if($user->inRole('partenaire') || $user->inRole('Partenaire'))
 
                                         <li><a href="#level1_1">Accès</a></li>
 
