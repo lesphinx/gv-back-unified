@@ -4,6 +4,8 @@ Create user
 @stop
 
 @section('content')
+<div class="card card-default">
+<div class="card-body">
 
         <div class="panel panel-default">
         <div class="panel-heading">Créer Utilisateur</div>
@@ -88,7 +90,8 @@ Create user
   </div>
     </div>
 
-
+    </div>
+</div>
 @stop
 
 @section('js')

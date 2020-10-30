@@ -50,10 +50,10 @@
 
 @stop
 @section('js')
-<script src="{{ URL::asset('/backend/vendors/sumoselect/jquery.sumoselect.js') }}"></script>
-<link href="{{ URL::asset('/backend/vendors/sumoselect/sumoselect.css') }}" rel="stylesheet" />
+    <script src="{{ URL::asset('select/jquery.sumoselect.js') }}"></script>
+    <link href="{{ URL::asset('select/sumoselect.css') }}" rel="stylesheet"/>
 
-<script type="text/javascript">
-    $('.select').SumoSelect({ selectAll: true, placeholder: 'Selitionner d\'abord' });
-</script>
+    <script type="text/javascript">
+        $('.select').SumoSelect({selectAll: true, placeholder: 'Nothing selected'});
+    </script>
 @endsection

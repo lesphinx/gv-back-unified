@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="<?php echo e(config('app.locale')); ?>">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,32 +66,35 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            <?php if(Route::has('login')): ?>
                 <div class="top-right links">
-                    @if (Sentinel::check())
-                        <a href="{{ url('/dashboard') }}">Accueil</a>
-                        {!! Form::open(['url' => url('logout'),'class'=>'form-inline']) !!}
-                           {!! csrf_field() !!}
+                    <?php if(Sentinel::check()): ?>
+                        <a href="<?php echo e(url('/dashboard')); ?>">Accueil</a>
+                        <?php echo Form::open(['url' => url('logout'),'class'=>'form-inline']); ?>
+
+                           <?php echo csrf_field(); ?>
+
                           <button class="btn btn-primary btn-lg btn-block register-button" type="submit" >Logout</button>
-                       {!! Form::close() !!}
+                       <?php echo Form::close(); ?>
+
                        
-                    @else
-                        <a href="{{ url('/login') }}">Connexion</a>
-                        <a href="{{ url('/register') }}">Créer compte</a>
-                    @endif
+                    <?php else: ?>
+                        <a href="<?php echo e(url('/login')); ?>">Connexion</a>
+                        <a href="<?php echo e(url('/register')); ?>">Créer compte</a>
+                    <?php endif; ?>
                 </div>
-            @endif
+            <?php endif; ?>
 
             <div class="content">
                 <div class="title m-b-md">
                     Gvoyage accueil backend
                     
                 </div>
-                @if (Sentinel::check() )
-                     Nom : {{Sentinel::getUser()->first_name}} <br>
-                     Prénom : {{Sentinel::getUser()->last_name}} <br>
-                     E-mail : {{Sentinel::getUser()->email}} <br>
-                    @endif
+                <?php if(Sentinel::check() ): ?>
+                     Nom : <?php echo e(Sentinel::getUser()->first_name); ?> <br>
+                     Prénom : <?php echo e(Sentinel::getUser()->last_name); ?> <br>
+                     E-mail : <?php echo e(Sentinel::getUser()->email); ?> <br>
+                    <?php endif; ?>
 
                 <div class="links">
                     <a href="http://technomegapartners.com">Tweeter TMP</a>

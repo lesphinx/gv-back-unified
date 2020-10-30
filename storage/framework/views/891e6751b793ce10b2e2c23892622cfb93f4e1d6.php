@@ -4,6 +4,9 @@ Détail de  <?php echo e($user->first_name); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+<div class="card card-default">
+<div class="card-body">
+
 <div class="panel panel-default">
         <div class="panel-heading">L'Utlisateur :  <?php echo e($user->first_name); ?></div>
 
@@ -55,6 +58,7 @@ Détail de  <?php echo e($user->first_name); ?>
     </ul>
     </div>
     </div>                
-
+    </div>
+</div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

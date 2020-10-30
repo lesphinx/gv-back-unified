@@ -15,7 +15,7 @@
 			padding-top: 70px;
 		}
 	</style>
-	@yield('style')
+	@yield('css')
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -23,22 +23,22 @@
 	        <!-- Brand and toggle get grouped for better mobile display -->
 	        <div class="navbar-header">
 	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-	                <span class="sr-only">Toggle navigation</span>
+	                <span class="sr-only">Informations</span>
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="{{url('/')}}">Sarter Laravel 5.4</a>
+	            <a class="navbar-brand" href="{{url('/')}}">Gvoyage Backend</a>
 	        </div>
 
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('login') }}">Login</a></li>
-						<li><a href="{{ url('register') }}">Register</a></li>
+						<li><a href="{{ url('login') }}">Connexion</a></li>
+						<li><a href="{{ url('register') }}">Créer compte</a></li>
 					@else
 						<li><a href="#">{{ Auth::user()->name }}</a></li>
-						<li><a href="{{ url('logout') }}">Logout</a></li>
+						<li><a href="{{ url('logout') }}">Se déconnecter</a></li>
 					@endif
 				</ul>
 			</div>
@@ -53,7 +53,7 @@
 	<hr/>
 
 	<div class="container">
-	    &copy; {{ date('Y') }}. Created by <a href="http://www.rolandalla.com">Roland Alla</a>
+	    &copy; {{ date('Y') }}. Créer par  <a href="http://technomegapartners.com">TMP</a>
 	    <br/>
 	</div>
 
@@ -61,6 +61,6 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-	@yield('scripts')
+	@yield('js')
 </body>
 </html>

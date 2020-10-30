@@ -3,6 +3,8 @@ Edition utilisateur
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+<div class="card card-default">
+<div class="card-body">
 
 <div class="panel panel-default">
    <div class="panel-heading">Editer utilisateur: <?php echo e($user->name); ?></div>
@@ -91,7 +93,8 @@ Edition utilisateur
     </div>
     </div>
 
-
+    </div>
+</div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>

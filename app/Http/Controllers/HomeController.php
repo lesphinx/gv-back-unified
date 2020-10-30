@@ -9,7 +9,9 @@ class HomeController extends Controller
 {
     public function home($value='')
     {
-    	return view('auth.login');
+        //return view('auth.login');
+        return view('welcome');
+
     }
     public function YourhomePage($value='')
     {

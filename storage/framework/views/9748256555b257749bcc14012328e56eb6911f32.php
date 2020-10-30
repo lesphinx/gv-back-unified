@@ -3,10 +3,12 @@ Utilisateur
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-<div class="panel panel-default">
-        <div class="panel-heading">Utilisateurs</div>
+<div class="card card-default">
+<div class="card-body">
+<div class="">
+        <div class="">Utilisateurs</div>
 
-        <div class="panel-body">
+        <div class="">
 
 <?php if(Sentinel::getUser()->hasAccess(['user.create'])): ?>
 <a href="<?php echo e(route('user.create')); ?>" class="btn btn-success">Nouveau Utilisateur</a>
@@ -79,6 +81,8 @@ Utilisateur
 <?php endif; ?>
 </div>
 </div>
+</div>
+</div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>
@@ -93,7 +97,7 @@ Utilisateur
           'order': [1, 'asc']
             });
     });
-      // Handle click on "Select all" control
+      // Handle click on "tout selectionner" control
    $('#example-select-all').on('click', function(){
       // Check/uncheck all checkboxes in the table
       var rows = table.rows({ 'search': 'applied' }).nodes();
@@ -145,8 +149,8 @@ Utilisateur
         }
         return false;
     });
-    //End Deactivate Function
-      //Start Activate all Function
+    //fin Deactivate Function
+      //debut Activate all Function
     $("#activate_all").click(function(event){
         event.preventDefault();
         if (confirm("Etes vous sur d'activer cet utilisateur ?")) {
@@ -167,7 +171,7 @@ Utilisateur
         }
         return false;
     });
-    //End Activate Function
+    //fin Activate Function
 
 
 
@@ -179,6 +183,8 @@ Utilisateur
     return searchIDs;
    }
 </script>
+
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layout.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

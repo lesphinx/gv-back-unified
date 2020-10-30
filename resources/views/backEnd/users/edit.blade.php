@@ -4,6 +4,8 @@ Edition utilisateur
 @stop
 
 @section('content')
+<div class="card card-default">
+<div class="card-body">
 
 <div class="panel panel-default">
    <div class="panel-heading">Editer utilisateur: {{$user->name}}</div>
@@ -71,7 +73,8 @@ Edition utilisateur
     </div>
     </div>
 
-
+    </div>
+</div>
 @stop
 
 @section('js')

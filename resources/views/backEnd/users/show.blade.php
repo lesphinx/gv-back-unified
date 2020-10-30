@@ -4,6 +4,9 @@ Détail de  {{$user->first_name}}
 @stop
 
 @section('content')
+<div class="card card-default">
+<div class="card-body">
+
 <div class="panel panel-default">
         <div class="panel-heading">L'Utlisateur :  {{$user->first_name}}</div>
 
@@ -47,5 +50,6 @@ Détail de  {{$user->first_name}}
     </ul>
     </div>
     </div>                
-
+    </div>
+</div>
 @stop
