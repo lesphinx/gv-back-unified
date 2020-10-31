@@ -4,11 +4,11 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://api.technomegapartners.com',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'base64:GBlNtN6pCxpAqyphiGrrGcPE9KaP6s9dFnU3nLrviX8=',
+    'key' => 'base64:8XCbT6yYbDcOAEWKM1XkzjwymPalBXx+Ahto0FOM8TM=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\framework/cache/data',
+        'path' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -294,9 +294,9 @@
   'crudgenerator' => 
   array (
     'custom_template' => false,
-    'path' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources/',
-    'route' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\routes/web.php',
-    'viewMasterPath' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources/views/backLayout/',
+    'path' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/',
+    'route' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/routes/web.php',
+    'viewMasterPath' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/views/backLayout/',
   ),
   'database' => 
   array (
@@ -306,17 +306,17 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'gvoyage',
+        'database' => 'tcro2697_gvoyage_06062020',
         'prefix' => '',
       ),
       'mysql' => 
       array (
         'driver' => 'mysql',
-        'host' => '127.0.0.1',
+        'host' => 'localhost',
         'port' => '5432',
-        'database' => 'gvoyage',
-        'username' => 'ibrahim',
-        'password' => 'ibrahim',
+        'database' => 'tcro2697_gvoyage_06062020',
+        'username' => 'tcro2697_ibrahim',
+        'password' => 'Ibrahim@2020',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -327,11 +327,11 @@
       'pgsql' => 
       array (
         'driver' => 'pgsql',
-        'host' => '127.0.0.1',
+        'host' => 'localhost',
         'port' => '5432',
-        'database' => 'gvoyage',
-        'username' => 'ibrahim',
-        'password' => 'ibrahim',
+        'database' => 'tcro2697_gvoyage_06062020',
+        'username' => 'tcro2697_ibrahim',
+        'password' => 'Ibrahim@2020',
         'charset' => 'utf8',
         'prefix' => '',
         'schema' => 'public',
@@ -360,13 +360,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\app',
+        'root' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'root' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/app/public',
+        'url' => 'http://api.technomegapartners.com/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -446,7 +446,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources\\views/vendor/mail',
+        0 => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -526,7 +526,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\framework/sessions',
+    'files' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -545,9 +545,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\resources\\views',
+      0 => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/views',
     ),
-    'compiled' => 'C:\\Users\\user\\Documents\\gv\\gv-back-unified\\storage\\framework\\views',
+    'compiled' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/framework/views',
   ),
   'cors' => 
   array (
