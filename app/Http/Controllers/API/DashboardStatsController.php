@@ -5,6 +5,9 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Sentinel;
+use App\Partenaire;
+
 
 class DashboardStatsController extends Controller
 {
@@ -23,8 +26,18 @@ class DashboardStatsController extends Controller
 
     public function voyages()
     {
-        $nb_voyages = DB::table('voyages')->where('voyages.etat','=',2)->get()->count();
+        $nb_voyages = DB::table('voyages')->count();
         return response()->json($nb_voyages);
+    }
+
+    public function voyagesPartenaire()
+    {
+        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+
+        $nb_voyages_partenaire = DB::table('voyages')->where('voyages.partenaire','=',$partenaire->id)
+        ->count();
+
+        return response()->json($nb_voyages_partenaire);
     }
 
     public function reservations()
@@ -32,17 +45,57 @@ class DashboardStatsController extends Controller
         $nb_reservationvoyages = DB::table('reservationvoyages')->count();
         return response()->json($nb_reservationvoyages);
     }
+//pas bon
+    public function reservationsPartenaire()
+    {
+        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+
+        $nb_reservationvoyages = DB::table('reservationvoyages')
+        ->join('voyages','voyages.id','=','reservationvoyages.voyage')
+        ->where('voyages.partenaire','=',$partenaire->id)
+        ->count();
+
+        return response()->json($nb_reservationvoyages_partenaire);
+    }
 
     public function reservationsConfirmes()
     {
-        $nb_reservationvoyages_confirmes = DB::table('reservationvoyages')->where('reservationvoyages.statut','=',2)->count();
+        $nb_reservationvoyages_confirmes = DB::table('reservationvoyages')
+        ->where('reservationvoyages.statut','=',2)->count();
         return response()->json($nb_reservationvoyages_confirmes);
+    }
+
+    public function reservationsConfirmesPartenaire()
+    {
+        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+
+        $nb_reservationvoyages_confirmes_partenaire = DB::table('reservationvoyages')
+        ->join('voyages','voyages.id','=','reservationvoyages.voyage')
+        ->where('voyages.partenaire','=',$partenaire->id)
+        ->where('reservationvoyages.statut','=',2)
+        ->count();
+
+        return response()->json($nb_reservationvoyages_confirmes_partenaire);
     }
 
     public function reservationsAnnules()
     {
-        $nb_reservationvoyages_annules = DB::table('reservationvoyages')->where('reservationvoyages.statut','=',1)->count();
+        $nb_reservationvoyages_annules = DB::table('reservationvoyages'
+        )->where('reservationvoyages.statut','=',1)->count();
         return response()->json($nb_reservationvoyages_annules);
+    }
+
+    public function reservationsAnnulesPartenaire()
+    {
+        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+
+        $nb_reservationvoyages_annules_partenaire = DB::table('reservationvoyages')
+        ->join('voyages','voyages.id','=','reservationvoyages.voyage')
+        ->where('voyages.partenaire','=',$partenaire->id)
+        ->where('reservationvoyages.statut','=',1)
+        ->count();
+
+        return response()->json($nb_reservationvoyages_annules_partenaire);
     }
 
     public function clients()
@@ -51,16 +104,44 @@ class DashboardStatsController extends Controller
         return response()->json($nb_clients);
     }
 
+
     public function locations()
     {
-        $nb_locations = DB::table('reservationlocations')->count();
+        $nb_locations = DB::table('locations')->count();
         return response()->json($nb_locations);
+    }
+
+    public function locationsPartenaire()
+    {
+        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+
+        $nb_locations_partenaire = DB::table('locations')
+        ->where('locations.partenaire','=',$partenaire->id)
+        ->count();
+
+        return response()->json($nb_locations_partenaire);
     }
 
     public function recettesVoyages()
     {
-        $recettes = DB::table('reservationvoyages')->where('reservationvoyages.statut','=',2)->sum('reservationvoyages.prix_voyage'); 
+        $recettes = DB::table('reservationvoyages')
+        ->where('reservationvoyages.statut','=',2)
+        ->sum('reservationvoyages.prix_voyage'); 
         return response()->json($recettes);
+    }
+
+    public function recettesVoyagespartenaire()
+    {
+        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+
+        $recettes_partenaire = DB::table('reservationvoyages')
+        ->where([
+            ['reservationvoyages.statut','=',2],
+            ['reservationvoyages.partenaire','=',$partenaire->id]
+          ])
+        ->sum('reservationvoyages.prix_voyage'); 
+
+        return response()->json($recettes_partenaire);
     }
 
     public function reservationsByAnnee($mois)

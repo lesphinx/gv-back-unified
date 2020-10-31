@@ -313,8 +313,8 @@ class AdminDashboardController extends Controller
 
     public function profileEdit()
     {
-        return view('profile.edit');
-     }
+         return view('profile.edit');
+    }
 
     /**
      * return clients pages.

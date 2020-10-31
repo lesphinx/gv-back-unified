@@ -453,11 +453,21 @@ route::put('change_state_location/{slug}', 'API\\LocationController@change_state
     Route::get('voyages-client-jour', 'API\\DashboardStatsController@voyagesClientParJour');
 
 
+    // Charger les stats partenaire
+    Route::get('nombre-voyages-partenaire', 'API\\DashboardStatsController@voyagesPartenaire');
+    Route::get('nombre-reservations-confirmes-partenaire', 'API\\DashboardStatsController@reservationsConfirmesPartenaire');
+    Route::get('nombre-reservations-annules-partenaire', 'API\\DashboardStatsController@reservationsAnnulesPartenaire');
+    Route::get('nombre-locations-partenaire', 'API\\DashboardStatsController@locationsPartenaire');
+    Route::get('total-recette-voyage-partenaire', 'API\\DashboardStatsController@recettesVoyagespartenaire');
+
+
+
+
     //Route partie vidila
 
     // Voyage
-    Route::get('voyages-partenaire', 'AdminDashboardController@voyagePartenaire')->name('pages.voyage-partenaire');
-    Route::get('locations-partenaire', 'AdminDashboardController@locationPartenaire')->name('pages.location-partenaire');
+Route::get('voyages-partenaire', 'AdminDashboardController@voyagePartenaire')->name('pages.voyage-partenaire');
+Route::get('locations-partenaire', 'AdminDashboardController@locationPartenaire')->name('pages.location-partenaire');
 
 
 Route::get('location-partenaire','API\\LocationPartenaireController@index')->name('web-api.liste-location-partenaire');
