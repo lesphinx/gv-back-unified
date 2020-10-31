@@ -30,7 +30,7 @@ class VoyagePartenaireController extends Controller
         $client = $request->input('client');
 
         $now = new \DateTime();
-        $partenaire = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
+        $partenaire  = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
 
         if( $client == 1 ) {
             $voyages = new VoyageCollection(
