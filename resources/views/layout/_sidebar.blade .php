@@ -217,133 +217,119 @@
 
 
             @if ($user->hasAnyAccess(['user.*']))
-            <li><a  data-toggle="collapse" href="#user"><i class="fa fa-users"></i>Utilisateurs <span class="fa fa-chevron-down"></span></a>
-            <div class="collapse " id="user">
+                <li><a  data-toggle="collapse" href="#user"><i class="fa fa-users"></i>Utilisateurs <span class="fa fa-chevron-down"></span></a>
+                    <div class="collapse " id="user">
 
-            <ul class="nav child_menu">
-              @if($user->inRole('admin') || $user->inRole('super-admin'))
-                <li><a href="{{route('user.index')}}">Les utilisateurs</a></li>
-                <li >
-                  <a href="{{ route('pages.client') }}">
-                      <span class="sidebar-normal"> Clients </span>
-                  </a>
+                        <ul class="nav child_menu">
+                            @if($user->inRole('admin') || $user->inRole('super-admin'))
+                                <li><a href="{{route('user.index')}}">Les utilisateurs</a></li>
+                                <li >
+                                <a href="{{ route('pages.client') }}">
+                                    <span class="sidebar-normal"> Clients </span>
+                                </a>
+                                </li>
+                                <li >
+                                <a href="{{ route('pages.personnel') }}">
+                                    <span class="sidebar-normal"> Personnel </span>
+                                </a>
+                                </li>
+                            @endif
+                            @if($user->inRole('partenaire'))
+                                <li >
+                                <a href="{{ route('pages.client') }}">
+                                    <span class="sidebar-normal"> Clients </span>
+                                </a>
+                                </li>
+                                <li >
+                                <a href="{{ route('pages.personnel') }}">
+                                    <span class="sidebar-normal"> Personnel </span>
+                                </a>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
                 </li>
-                <li >
-                  <a href="{{ route('pages.personnel') }}">
-                      <span class="sidebar-normal"> Personnel </span>
-                  </a>
-                </li>
-              @endif
-              @if($user->inRole('partenaire'))
-                <li >
-                  <a href="{{ route('pages.client') }}">
-                      <span class="sidebar-normal"> Clients </span>
-                  </a>
-                </li>
-                <li >
-                  <a href="{{ route('pages.personnel') }}">
-                      <span class="sidebar-normal"> Personnel </span>
-                  </a>
-                </li>
-              @endif
-              <!--  @if (Sentinel::getUser()->hasAnyAccess(['role.*']))
-                    <li >
-                      <a href="{{ route('pages.getroles') }}">
-                          <span class="sidebar-normal"> Role & Permissions </span>
-                      </a>
-                    </li>
-                @endif -->
-              <!--  @if (Sentinel::getUser()->hasAnyAccess(['role.*']))
-
-                    <li >
-                      <a class="nav-link btn-magnify" href="{{route('pages.api')}}">
-                          <span>API</span>
-                      </a>
-                    </li>
-
-                @endif -->
-                <!-- <li><a href="{{route('user.create')}}">Nouveau Utilisateurs</a></li> -->
-              </ul>
-            </div>
-            </li>
           @endif
+
+
          
-          @if ($user->hasAnyAccess(['role.*']))
-            <li><a data-toggle="collapse" href="#param"><i class="fa fa-cog "></i> Paramétre<span class="fa fa-chevron-down"></span></a>
-            <div class="collapse " id="param">
+           @if ($user->hasAnyAccess(['role.*']))
+                <li><a data-toggle="collapse" href="#param"><i class="fa fa-cog "></i> Paramétre<span class="fa fa-chevron-down"></span></a>
+                    <div class="collapse " id="param">
 
-            <ul class="nav child_menu">
+                        <ul class="nav child_menu">
 
-                  <li><a href="#level1_1">Mon compte</a>
+                                <li><a href="#level1_1">Mon compte</a></li>
 
 
-                 @if($user->inRole('partenaire'))
+                                @if($user->inRole('partenaire'))
 
-                  <li><a href="#level1_1">Accès</a>
+                                        <li><a href="#level1_1">Accès</a></li>
 
-                @endif
+                                @endif
 
-                  @if($user->inRole('admin') || $user->inRole('super-admin'))
+                                @if($user->inRole('admin') || $user->inRole('super-admin'))
 
-                  <li><a href="#level1_1">Accès</a>
-                  
-                  <li><a data-toggle="collapse" href="#role"><i class="fa fa fa-sitemap "></i>Roles <span class="fa fa-chevron-down"></span></a>
-                  <div class="collapse " id="role">
+                                    <li><a href="#level1_1">Accès</a></li>
+                            
+                                    <li><a data-toggle="collapse" href="#role"><i class="fa fa fa-sitemap "></i>Roles <span class="fa fa-chevron-down"></span></a>
+                                        <div class="collapse " id="role">
 
-                  <ul class="nav child_menu">
-                      <li><a href="{{route('pages.getroles')}}">Les roles</a></li>
-                      <li><a href="{{route('role.create')}}">Créer role</a></li>
-                    </ul>
-                  </div>
-                  </li>
+                                            <ul class="nav child_menu">
+                                                <li><a href="{{route('pages.getroles')}}">Les roles</a></li>
+                                                <li><a href="{{route('role.create')}}">Créer role</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
 
-                  <li><a data-toggle="collapse" href="#localite"><i class="fa fa-building-o "></i>Localités <span class="fa fa-chevron-down"></span></a>
-                  <div class="collapse " id="localite">
-  
-                  <ul class="nav child_menu">
-                      <li><a href="{{route('pages.decoupage-un')}}">Provinces</a></li>
-                      <li >
-                        <a href="{{ route('pages.ville') }}">
-                            <span class="sidebar-normal"> Villes </span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="{{route('pages.pays')}}">
-                            <span class="sidebar-normal"> Pays </span>
-                        </a>
-                      </li>
-                      @if ($user->hasAnyAccess(['role.*']))
-                          <li >
-                            <a href="{{ route('pages.getroles') }}">
-                                <span class="sidebar-normal"> Role & Permissions </span>
-                            </a>
-                          </li>
-                      @endif
-                      @if ($user->hasAnyAccess(['role.*']))
+                                    <li><a data-toggle="collapse" href="#localite"><i class="fa fa-building-o "></i>Localités <span class="fa fa-chevron-down"></span></a>
+                                        <div class="collapse " id="localite">
+                    
+                                            <ul class="nav child_menu">
+                                                    <li><a href="{{route('pages.decoupage-un')}}">Provinces</a></li>
+                                                    <li >
+                                                        <a href="{{ route('pages.ville') }}">
+                                                            <span class="sidebar-normal"> Villes </span>
+                                                        </a>
+                                                    </li>
+                                                    <li >
+                                                        <a href="{{route('pages.pays')}}">
+                                                            <span class="sidebar-normal"> Pays </span>
+                                                        </a>
+                                                    </li>
+                                                    @if ($user->hasAnyAccess(['role.*']))
+                                                        <li >
+                                                            <a href="{{ route('pages.getroles') }}">
+                                                                <span class="sidebar-normal"> Role & Permissions </span>
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                    @if ($user->hasAnyAccess(['role.*']))
 
-                          <li >
-                            <a class="nav-link btn-magnify" href="{{route('pages.api')}}">
-                                <span>API</span>
-                            </a>
-                          </li>
+                                                        <li >
+                                                            <a class="nav-link btn-magnify" href="{{route('pages.api')}}">
+                                                                <span>API</span>
+                                                            </a>
+                                                        </li>
 
-                      @endif
-                      <!-- <li><a href="{{route('user.create')}}">Nouveau Utilisateurs</a></li> -->
-                    </ul>
+                                                    @endif
+                                                    <!-- <li><a href="{{route('user.create')}}">Nouveau Utilisateurs</a></li> -->
+                                            </ul>
 
-                  </div>
-                </li>
+                                        </div>
+                                    </li>
 
-                @endif
+                                @endif
 
-                  
-              </ul>
-            </li> 
+                            
+                        </ul>
+                    </div>
+                </li> 
+            @endif
+
             @if ($user->hasAnyAccess(['role.*']))
-            <li><a href="{{route('pages.log')}}"><i class="fa fa-globe"></i> Historiques <span class=""></span></a></li>
-          @endif
-            </div>  
-          @endif 
+                <li><a href="{{route('pages.log')}}"><i class="fa fa-globe"></i> Historiques <span class=""></span></a></li>
+            @endif 
 
          
 
