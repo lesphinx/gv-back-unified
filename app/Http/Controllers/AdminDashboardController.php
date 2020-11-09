@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
 {
+    public function voyagePartenaire()
+    {
+        return View('voyagePartenaire.index');
+    }
+
+    public function locationPartenaire()
+    {
+        return View('locationPartenaire.index');
+    }
+
     /**
      * return clients pages.
      *
@@ -303,8 +313,8 @@ class AdminDashboardController extends Controller
 
     public function profileEdit()
     {
-        return view('profile.edit');
-     }
+         return view('profile.edit');
+    }
 
     /**
      * return clients pages.

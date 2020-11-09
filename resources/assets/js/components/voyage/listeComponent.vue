@@ -145,7 +145,7 @@
                         <i class="fa fa-pencil-square-o"></i>
                     </b-button>
                     <b-button pill variant="danger" size="sm"  v-b-tooltip.hover title="Supprimer"
-                              v-if="is_admin || is_controller" @click="removeVoyage(row.item, row.index)">
+                              v-if="is_admin || is_controller || row.item.etat===1 || row.item.etat===4" @click="removeVoyage(row.item, row.index)">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                     </b-button>
                 </template>

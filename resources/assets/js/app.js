@@ -57,8 +57,7 @@ Vue.use(VueGoogleMaps, {
 });
 /**
  * Dominique DAMBA
- */
-
+*/
 
 Vue.component('dashboard', require('./components/dashboard/Dashboard.vue'));
 Vue.component('clientlist', require('./components/client/Index.vue'));
@@ -78,12 +77,10 @@ Vue.component('update-personnel', require('./components/personnel/Update.vue'));
 Vue.component('mon-profile', require('./components/profile/Index.vue'));
 Vue.component('mon-profile-edit', require('./components/profile/Edit.vue'));
 
-
 Vue.component('log', require('./components/log/Log.vue'));
 
 Vue.component('decoupageun', require('./components/decoupageun/Index.vue'));
 Vue.component('decoupageun-list', require('./components/decoupageun/List.vue'));
-
 
 Vue.component('decoupagedeux', require('./components/decoupagedeux/Index.vue'));
 Vue.component('decoupagedeux-list', require('./components/decoupagedeux/List.vue'));
@@ -232,11 +229,22 @@ Vue.component('create-location', require('./components/location/CreateComponent'
 Vue.component('detail-location', require('./components/location/detailComponent'));
 Vue.component('multiple-image', require('./components/location/multipleImage'));
 
-
 /**
- *
+ *vidila
+*/
+Vue.component('dashboard-partenaire', require('./components/dashboard-partenaire/DashboardPartenaire.vue'));
+Vue.component('index-voyage-partenaire' , require('./components/voyagePartenaire/indexComponent'));
+Vue.component('update-voyage-partenaire' , require('./components/voyagePartenaire/updateComponent'));
+Vue.component('create-voyage-partenaire' , require('./components/voyagePartenaire/createComponent'));
+Vue.component('detail-voyage-partenaire' , require('./components/voyagePartenaire/detailComponent'));
+Vue.component('liste-voyage-partenaire' , require('./components/voyagePartenaire/listeComponent'));
+Vue.component('imageComponent' , require('./components/voyagePartenaire/imageComponent'));
+
+
+
+/*
  * Ibrahim Mahadi
- */
+*/
 
  Vue.component('annonce-list', require('./components/annonce/ListeComponent.vue'));
  Vue.component('annonce', require('./components/annonce/IndexComponent.vue'));
@@ -270,14 +278,15 @@ Vue.component('multiple-image', require('./components/location/multipleImage'));
  Vue.component('show-tarifannonce', require('./components/annonce/tarifannonce/Show.vue'));
 
 
-
  Vue.component('show-positon', require('./components/annonce/positionannonce/Show.vue'));
  Vue.component('create-positon', require('./components/annonce/positionannonce/Create.vue'));
  Vue.component('edit-positon', require('./components/annonce/positionannonce/Edit.vue'));
  Vue.component('position-list', require('./components/annonce/positionannonce/ListeComponent.vue'));
  Vue.component('positionannonce', require('./components/annonce/positionannonce/IndexComponent.vue'));
  Vue.component('positioncreate', require('./components/annonce/positionannonce/CreateComponent.vue'));
+ 
  //IMAGE
+
  Vue.component('vue-upload-multiple-image', require('./components/annonce/image/VueUploadMultipleImage.vue'));
  Vue.component('vue-upload-multiple-image0', require('./components/annonce/image/VueUploadMultipleImageVerif.vue'));
  Vue.component('vue-upload-multiple-image3', require('./components/annonce/image/VueUploadMultipleImageMinview.vue'));
@@ -286,6 +295,24 @@ Vue.component('multiple-image', require('./components/location/multipleImage'));
  Vue.component('create', require('./components/annonce/Create.vue'));
  Vue.component('edit', require('./components/annonce/Edit.vue'));
  Vue.component('show', require('./components/annonce/Show.vue'));
+
+
+ 
+//Location vidila
+
+Vue.component('location-partenaire', require('./components/locationPartenaire/IndexComponent'));
+Vue.component('liste-location-partenaire', require('./components/locationPartenaire/listComponent'));
+Vue.component('create-location-partenaire', require('./components/locationPartenaire/CreateComponent'));
+Vue.component('detail-location-partenaire', require('./components/locationPartenaire/detailComponent'));
+Vue.component('multiple-image-partenaire', require('./components/locationPartenaire/multipleImage'));
+
+Vue.component('location', require('./components/location/IndexComponent'));
+Vue.component('liste-location', require('./components/location/listComponent'));
+Vue.component('create-location', require('./components/location/CreateComponent'));
+Vue.component('detail-location', require('./components/location/detailComponent'));
+Vue.component('multiple-image', require('./components/location/multipleImage'));
+
+
 
  
 const router = new VueRouter({mode: 'history'});

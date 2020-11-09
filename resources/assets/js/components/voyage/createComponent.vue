@@ -90,14 +90,14 @@
                 </div>
 
                 <div class="form-group  col-3">
-                    <label for="pays_arrive" class="col-form-label"> Pays de départ</label>
+                    <label for="pays_arrive" class="col-form-label"> Pays d'arrivé</label>
                     <select v-model="form_voyage.pays_arrive" id="pays_arrive" class="form-control" @click="charger_ville_arrive">
                         <option value="null" disabled selected> ................. </option>
                         <option :value=p.value v-for="p in liste_pays"> {{p.text}}</option>
                     </select>
                 </div>
                 <div class="form-group  col-3">
-                    <label for="ville_arrivee" class="col-form-label obligatoire"> Ville arrivée </label>
+                    <label for="ville_arrivee" class="col-form-label obligatoire"> Ville d'arrivée </label>
                     <select v-model="form_voyage.ville_arrivee" id="ville_arrivee" class="form-control">
                         <option value="null" disabled selected> ............... </option>
                         <option :value=v.value v-for="v in liste_ville_arrivee"> {{v.text}}</option>

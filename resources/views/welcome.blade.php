@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Gvoyage</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -69,34 +69,34 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Sentinel::check())
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/dashboard') }}">Accueil</a>
                         {!! Form::open(['url' => url('logout'),'class'=>'form-inline']) !!}
                            {!! csrf_field() !!}
                           <button class="btn btn-primary btn-lg btn-block register-button" type="submit" >Logout</button>
                        {!! Form::close() !!}
                        
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">Connexion</a>
+                        <a href="{{ url('/register') }}">Créer compte</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Starter page
+                    Gvoyage accueil backend
                     
                 </div>
                 @if (Sentinel::check() )
-                     Your name : {{Sentinel::getUser()->first_name}} <br>
-                     Last name : {{Sentinel::getUser()->last_name}} <br>
+                     Nom : {{Sentinel::getUser()->first_name}} <br>
+                     Prénom : {{Sentinel::getUser()->last_name}} <br>
                      E-mail : {{Sentinel::getUser()->email}} <br>
                     @endif
 
                 <div class="links">
-                    <a href="https://github.com/roladn">GitHub</a>
-                    <a href="https://rolandalla.com/">Roland Alla</a>
-                    <a href="https://www.facebook.com/rolandalla91">Facebook</a>
+                    <a href="http://technomegapartners.com">Tweeter TMP</a>
+                    <a href="http://technomegapartners.com">Site TMP</a>
+                    <a href="http://technomegapartners.com">Facebook TMP</a>
                 </div>
             </div>
         </div>

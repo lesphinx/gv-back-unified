@@ -452,4 +452,51 @@ route::put('change_state_location/{slug}', 'API\\LocationController@change_state
     Route::get('locationByMois/{mois}', 'API\\DashboardStatsController@locationsByAnnee');
     Route::get('voyages-client-jour', 'API\\DashboardStatsController@voyagesClientParJour');
 
+
+    // Charger les stats partenaire
+    Route::get('nombre-voyages-partenaire', 'API\\DashboardStatsController@voyagesPartenaire');
+    Route::get('nombre-reservations-confirmes-partenaire', 'API\\DashboardStatsController@reservationsConfirmesPartenaire');
+    Route::get('nombre-reservations-annules-partenaire', 'API\\DashboardStatsController@reservationsAnnulesPartenaire');
+    Route::get('nombre-locations-partenaire', 'API\\DashboardStatsController@locationsPartenaire');
+    Route::get('total-recette-voyage-partenaire', 'API\\DashboardStatsController@recettesVoyagespartenaire');
+
+
+
+
+    //Route partie vidila
+
+    // Voyage
+Route::get('voyages-partenaire', 'AdminDashboardController@voyagePartenaire')->name('pages.voyage-partenaire');
+Route::get('locations-partenaire', 'AdminDashboardController@locationPartenaire')->name('pages.location-partenaire');
+
+
+Route::get('location-partenaire','API\\LocationPartenaireController@index')->name('web-api.liste-location-partenaire');
+Route::get('location-partenaire/{slug}','API\\LocationPartenaireController@show')->name('web-api.detail-location-partenaire');
+Route::post('location-partenaire','API\\LocationPartenaireController@store')->name('web-api.creation-location-partenaire');
+Route::put('location-partenaire/{slug}','API\\LocationPartenaireController@update')->name('web-api.mise-a-jours-location-partenaire');
+Route::delete('location-partenaire/{slug}','API\\LocationPartenaireController@destroy')->name('web-api.suppression-location-partenaire');
+Route::post('location-partenaire/deeper_search', 'API\\LocationPartenaireController@deeper_search')->name('web-api.location_search-partenaire');
+
+
+Route::get('voyage','API\\VoyageController@index')->name('web-api.liste-voyage');
+Route::get('voyage/{slug}','API\\VoyageController@show')->name('web-api.detail-voyage');
+Route::post('voyage','API\\VoyageController@store')->name('web-api.creation-voyage');
+Route::put('voyage/{slug}','API\\VoyageController@update')->name('web-api.mise-a-jours-voyage');
+Route::delete('voyage/{slug}','API\\VoyageController@destroy')->name('web-api.suppression-voyage');
+Route::get('voyage/partenaire/{slug}', 'API\\VoyageController@voyagePartenaire')->name('web-api.voyage-partenaire');
+Route::post('voyage/deeper_search', 'API\\VoyageController@deeper_search')->name('web-api.voyage_search');
+
+
+
+Route::get('voyage-partenaire','API\\VoyagePartenaireController@index')->name('web-api.liste-voyage-partenaire');
+Route::get('voyage-partenaire/{slug}','API\\VoyagePartenaireController@show')->name('web-api.detail-voyage-partenaire');
+Route::post('voyage-partenaire','API\\VoyagePartenaireController@store')->name('web-api.creation-voyage-partenaire');
+Route::put('voyage-partenaire/{slug}','API\\VoyagePartenaireController@update')->name('web-api.mise-a-jours-voyage-partenaire');
+Route::delete('voyage-partenaire/{slug}','API\\VoyagePartenaireController@destroy')->name('web-api.suppression-voyage-partenaire');
+Route::get('voyage-partenaire/partenaire/{slug}', 'API\\VoyagePartenaireController@voyagePartenaire')->name('web-api.voyage-partenaire-partenaire');
+Route::post('voyage-partenaire/deeper_search', 'API\\VoyagePartenaireController@deeper_search')->name('web-api.voyage_search');
+
+
+
+
 });
