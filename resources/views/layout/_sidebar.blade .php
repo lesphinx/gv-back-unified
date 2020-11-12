@@ -51,7 +51,7 @@
         </div>
         <ul class="nav sweety">
             <li>
-                <a href="#">
+                <a href="{{ route('dashboard') }}">
                     <i class="fa fa-dashboard"></i>
                     <p>Tableau de bord</p>
                 </a>
@@ -211,10 +211,6 @@
 
             @endif
             @endif
-            
-
-
-
 
             @if ($user->hasAnyAccess(['user.*']))
             <li><a  data-toggle="collapse" href="#user"><i class="fa fa-users"></i>Utilisateurs <span class="fa fa-chevron-down"></span></a>

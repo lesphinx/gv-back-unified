@@ -19,6 +19,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -322,7 +324,22 @@ class PartenaireController extends Controller
         $activation = Activation::create($user);
         $activation = Activation::complete($user, $activation->code);
 
+       // $to_name = $partenaire->nom_partenaire;
+        $to_name = 'VIDILA Saint';
+        $to_email =  'ibrahimkoubaye@gmail.com';
+       // $to_email =  $user->email;
+
+        $data = array('login'=>$user->email,'password'=>'default-for-admin-only');
+
+        Mail::send('mails.active_compte_partenaire',$data,function($message) use ($to_name,$to_email){
+        $to_name = 'VIDILA Saint';
+            $messsage->to($to_email,$to_name)
+            ->subject('Activation du compte');
+            $message->from('vidilasaint@gmail.com','VIDILA SAINT');
+        });
+
         $role = $user->roles()->first()->name;
+        
         return response()->json(['message' => 'Compte activé avec succès !']);
     }
 
@@ -455,6 +472,7 @@ class PartenaireController extends Controller
                 foreach ($agences as $agence)
                     $agence->delete();
             }
+
 
             // on récupere l'id du partenaire pour le log
             $id = $partenaire->id;
