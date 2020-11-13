@@ -204,6 +204,8 @@
                     {key: 'ville_arrivee', label: 'Ville arrivée',  sortable: true, sortDirection: 'desc'},
                     {key: 'moyen_transport', label: 'Moyen',  sortable: true, sortDirection: 'desc'},
                     {key: 'date_depart_human', label: 'Date départ'},
+                    {key: 'places', label: 'Places'},
+                    {key: 'places_dispo', label: 'Places disponibles'},
                     {key: 'libelle_etat', label: 'etat',  sortable: true, sortDirection: 'desc'},
                     {key: 'actions', label: 'Actions'},
                 ],

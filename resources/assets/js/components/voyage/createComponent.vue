@@ -177,21 +177,23 @@
                 <div class="col-6">
                     <br> <br>
                     <div class="row">
-                        <div class="col-3"><b>Classes</b></div>
-                        <div class="col-5"><b>Prix enfant (F CFA)</b></div>
-                        <div class="col-4"><b>Prix Adulte (F CFA)</b></div>
+                        <div class="col-4"><b>Classe</b></div>
+                        <div class="col-3"><b>Prix enfant (F CFA)</b></div>
+                        <div class="col-3"><b>Prix Adulte (F CFA)</b></div>
                     </div>
                     <hr>
                     <div class="row" v-for="(classe, index) in classes" :key="index">
-                        <div class="col-3"><b>{{classe.libelle}}</b></div>
-                        <div class="col-5">
-                            <b-form-input size="sm" v-model="form_voyage.tarif[index].prix_enfant" type="number">
+                        <div class="col-4"><b-form-input size="sm" type="text" placeholder="Entrez le nom de la classe">
+                            </b-form-input><!--b>{{classe.libelle}}</b--></div>
+                        <div class="col-3">
+                            <b-form-input size="sm" v-model="form_voyage.tarif[index].prix_enfant" placeholder="Entrez le prix enfant" type="number">
                             </b-form-input>
                         </div>
-                        <div class="col-4">
-                            <b-form-input size="sm"  v-model="form_voyage.tarif[index].prix_adulte" type="number">
+                        <div class="col-3">
+                            <b-form-input size="sm"  v-model="form_voyage.tarif[index].prix_adulte" placeholder="Entrez le prix adulte" type="number">
                             </b-form-input>
                         </div>
+                            
                         <hr>
                         <p v-if="error_tarif" style="color: red">
                             Vous devez renseigner au moins un prix adulte
