@@ -95,20 +95,20 @@
                 </div>
                 <?php endif; ?>
 
-                <?php if($user->inRole('partenaire') || $user->inRole('controlleur') || $user->inRole('technicien')): ?>
+                <?php if($user->inRole('partenaire') || $user->inRole('Partenaire') || $user->inRole('controlleur') || $user->inRole('technicien')): ?>
                 <div class="collapse " id="pagesExamples">
                     <ul class="nav">
 
                       
 
                         <li class="text-center">
-                            <a href="<?php echo e(route('pages.voyage')); ?>">
+                            <a href="<?php echo e(route('pages.voyage-partenaire')); ?>">
                                 <span class="sidebar-normal"> Voyage </span>
                             </a>
                         </li>
 
                         <li class="text-center">
-                            <a href="<?php echo e(route('pages.location')); ?>">
+                            <a href="<?php echo e(route('pages.location-partenaire')); ?>">
                                 <span class="sidebar-normal"> Location </span>
                             </a>
                         </li>
@@ -230,7 +230,7 @@
                             </a>
                             </li>
                         <?php endif; ?>
-                        <?php if($user->inRole('partenaire')): ?>
+                        <?php if($user->inRole('partenaire') || $user->inRole('Partenaire')): ?>
                             <li >
                             <a href="<?php echo e(route('pages.client')); ?>">
                                 <span class="sidebar-normal"> Clients </span>
@@ -256,7 +256,7 @@
                                 <li><a href="#level1_1">Mon compte</a></li>
 
 
-                                <?php if($user->inRole('partenaire')): ?>
+                                <?php if($user->inRole('partenaire') || $user->inRole('Partenaire')): ?>
 
                                         <li><a href="#level1_1">Accès</a></li>
 

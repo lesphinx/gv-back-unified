@@ -4,11 +4,11 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://api.technomegapartners.com',
+    'url' => 'http://localhost',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'base64:8XCbT6yYbDcOAEWKM1XkzjwymPalBXx+Ahto0FOM8TM=',
+    'key' => 'base64:Wb5ZZhGFlHiiJwvejhtE4PbiJBPTfUWZIFbLTCmvqRI=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/framework/cache/data',
+        'path' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -294,9 +294,9 @@
   'crudgenerator' => 
   array (
     'custom_template' => false,
-    'path' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/',
-    'route' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/routes/web.php',
-    'viewMasterPath' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/views/backLayout/',
+    'path' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/',
+    'route' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/routes/web.php',
+    'viewMasterPath' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/views/backLayout/',
   ),
   'database' => 
   array (
@@ -306,7 +306,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'tcro2697_gvoyage_06062020',
+        'database' => 'teste',
         'prefix' => '',
       ),
       'mysql' => 
@@ -314,9 +314,9 @@
         'driver' => 'mysql',
         'host' => 'localhost',
         'port' => '5432',
-        'database' => 'tcro2697_gvoyage_06062020',
-        'username' => 'tcro2697_ibrahim',
-        'password' => 'Ibrahim@2020',
+        'database' => 'teste',
+        'username' => 'macbookpro',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -329,9 +329,9 @@
         'driver' => 'pgsql',
         'host' => 'localhost',
         'port' => '5432',
-        'database' => 'tcro2697_gvoyage_06062020',
-        'username' => 'tcro2697_ibrahim',
-        'password' => 'Ibrahim@2020',
+        'database' => 'teste',
+        'username' => 'macbookpro',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'schema' => 'public',
@@ -360,13 +360,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/app',
+        'root' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/app/public',
-        'url' => 'http://api.technomegapartners.com/storage',
+        'root' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -446,7 +446,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/views/vendor/mail',
+        0 => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -526,7 +526,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/framework/sessions',
+    'files' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -545,9 +545,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/resources/views',
+      0 => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/resources/views',
     ),
-    'compiled' => '/home/tcro2697/gvb.technomegapartners.com/gv-back-unified/storage/framework/views',
+    'compiled' => '/Users/macbookpro/Dropbox/My Mac (MacBook-Pro-de-Macbook.local)/Downloads/bonprojet/tmp/gv-back-unified/storage/framework/views',
   ),
   'cors' => 
   array (

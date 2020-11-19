@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Tymon\JWTAuth\Http\Middleware\Authenticate;
+
+use Closure;
+
+class JWTAuthenticate extends Authenticate
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
+     *
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        // My own logics here
+        // ...
+
+
+        $this->authenticate($request);
+
+        return $next($request);
+    }
+}

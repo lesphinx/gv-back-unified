@@ -14,7 +14,7 @@ Edition utilisateur
 
     {{ Form::model($user, array('method' => 'PATCH', 'url' => route('user.update', $user->id), 'class' => 'form-horizontal', 'files' => true)) }}
       <ul>
-            <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
+            <div class="row form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
                  {!! Form::label('first_name', 'Nom', ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
@@ -22,21 +22,21 @@ Edition utilisateur
                 </div>
             </div>
            
-           <div class="form-group {{ $errors->has('last_name') ? 'has-error' : ''}}">
+           <div class="row form-group {{ $errors->has('last_name') ? 'has-error' : ''}}">
                  {!! Form::label('last_name', 'Prénom' , ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
                     {!! $errors->first('last_name', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
-            <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
+            <div class="row form-group {{ $errors->has('email') ? 'has-error' : ''}}">
                  {!! Form::label('email', 'Email', ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('email', null, ['class' => 'form-control']) !!}
                     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
-            <div class="form-group {{ $errors->has('new_password') ? 'has-error' : ''}}">
+            <div class="row form-group {{ $errors->has('new_password') ? 'has-error' : ''}}">
                  {!! Form::label('new_password', 'Mot de passe', ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::password('new_password', ['class' => 'form-control']) !!}
@@ -44,7 +44,7 @@ Edition utilisateur
                 </div>
             </div>
 
-            <div class="form-group {{ $errors->has('new_password_confirmation') ? 'has-error' : ''}}">
+            <div class="row form-group {{ $errors->has('new_password_confirmation') ? 'has-error' : ''}}">
                  {!! Form::label('new_password_confirmation', 'Confirmation Mot de passe', ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::password('new_password_confirmation', ['class' => 'form-control']) !!}
@@ -52,7 +52,7 @@ Edition utilisateur
                 </div>
             </div>
 
-            <div id="role" class="form-group {{ $errors->has('role') ? 'has-error' : ''}}">
+            <div id="role" class="row form-group {{ $errors->has('role') ? 'has-error' : ''}}">
                  {!! Form::label('role','Role Utilisateur', ['class' => 'col-md-4 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::select('role', $roles, null, ['class' => 'form-control']) !!}
@@ -60,7 +60,7 @@ Edition utilisateur
                 </div>
             </div>
            
-            <div class="form-group">
+            <div class="row form-group">
                 <div class="col-sm-offset-4 col-sm-3">
                     {!! Form::submit('Enregistrer', ['class' => 'btn btn-success form-control']) !!}
                 </div>

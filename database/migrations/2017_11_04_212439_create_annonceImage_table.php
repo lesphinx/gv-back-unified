@@ -19,9 +19,9 @@ class CreateAnnonceImageTable extends Migration
             $table->unsignedInteger('annonce');
             $table->unsignedInteger('image');
             $table->string('slug');
+            $table->timestamps();
 
             $table->softDeletes();
-            $table->timestamps();
         });
     }
 
