@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * Part of the Sentinel package.
+ *
+ * NOTICE OF LICENSE
+ *
+ * Licensed under the 3-clause BSD License.
+ *
+ * This source file is subject to the 3-clause BSD License that is
+ * bundled with this package in the LICENSE file.
+ *
+ * @package    Sentinel
+ * @version    2.0.15
+ * @author     Cartalyst LLC
+ * @license    BSD License (3-clause)
+ * @copyright  (c) 2011-2017, Cartalyst LLC
+ * @link       http://cartalyst.com
+ */
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,6 +37,11 @@ class MigrationCartalystSentinel extends Migration
             $table->boolean('completed')->default(0);
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            //$table->engine = 'InnoDB';
+
+
+
         });
 
         Schema::create('persistences', function (Blueprint $table) {
@@ -27,7 +49,12 @@ class MigrationCartalystSentinel extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('code');
             $table->timestamps();
+
             $table->unique('code');
+            $table->softDeletes();
+            //$table->engine = 'InnoDB';
+
+
         });
 
         Schema::create('reminders', function (Blueprint $table) {
@@ -37,6 +64,11 @@ class MigrationCartalystSentinel extends Migration
             $table->boolean('completed')->default(0);
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            //$table->engine = 'InnoDB';
+
+
+
         });
 
         Schema::create('roles', function (Blueprint $table) {
@@ -45,14 +77,26 @@ class MigrationCartalystSentinel extends Migration
             $table->string('name');
             $table->text('permissions')->nullable();
             $table->timestamps();
+
             $table->unique('slug');
+            $table->softDeletes();
+
+            //$table->engine = 'InnoDB';
+
+
         });
 
         Schema::create('role_users', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->integer('role_id')->unsigned();
             $table->nullableTimestamps();
+
             $table->primary(['user_id', 'role_id']);
+            $table->softDeletes();
+
+            //$table->engine = 'InnoDB';
+
+
         });
 
         Schema::create('throttle', function (Blueprint $table) {
@@ -61,7 +105,10 @@ class MigrationCartalystSentinel extends Migration
             $table->string('type');
             $table->string('ip')->nullable();
             $table->timestamps();
+
             $table->index('user_id');
+            $table->softDeletes();
+
         });
 
         Schema::create('users', function (Blueprint $table) {
@@ -70,15 +117,24 @@ class MigrationCartalystSentinel extends Migration
             $table->string('password');
             $table->text('permissions')->nullable();
             $table->timestamp('last_login')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('remember_token', 100)->nullable();
             $table->string('slug')->nullable();
             $table->string('langue')->nullable();
             $table->string('telephone')->nullable();
-            $table->integer('role');
-
-            $table->softDeletes();
+            $table->integer('role')->nullable();
             $table->timestamps();
+
             $table->unique('email');
+            $table->softDeletes();
+
+            //$table->engine = 'InnoDB';
+
+
+
+           
+           
         });
     }
 
