@@ -110,8 +110,8 @@
                     :sort-desc.sync="sortDesc"
                     :sort-direction="sortDirection"
                     @filtered="onFiltered"
-                    class="table responsive table-bordered"
-            >
+                    class="table responsive table-bordered">
+                    
                 <template slot="partenaire" slot-scope="row">
                     {{ row.value}}
                 </template>
@@ -136,6 +136,10 @@
                     {{ row.value}}
                 </template>
 
+                <template slot="nombre_place" slot-scope="row">
+                    {{ row.value}}
+                </template>
+
                 <template slot="actions" slot-scope="row">
                     <b-button pill variant="info" v-b-tooltip.hover title="Détail du voyage" size="sm" @click="onShowDetail(row.item)">
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -157,8 +161,7 @@
                     <b-button
                             @click="all_voyage(pagination_backend.page+1, pagination_backend.par_page)"
                             size="sm" variant="success"
-                            v-if="liste_voyages.length<pagination_backend.total && !recherche_approfondi"
-                    >
+                            v-if="liste_voyages.length<pagination_backend.total && !recherche_approfondi">
                         Charger plus d'éléments
                     </b-button>
                 </div>
@@ -172,8 +175,8 @@
                             prev-text="Précédent"
                             next-text="Suivant"
                             last-text="Fin"
-                            class="mt-4"
-                        ></b-pagination>
+                            class="mt-4">
+                        </b-pagination>
                     </div>
                 </div>
             </b-row>
@@ -204,8 +207,8 @@
                     {key: 'ville_arrivee', label: 'Ville arrivée',  sortable: true, sortDirection: 'desc'},
                     {key: 'moyen_transport', label: 'Moyen',  sortable: true, sortDirection: 'desc'},
                     {key: 'date_depart_human', label: 'Date départ'},
-                    {key: 'places', label: 'Places'},
-                    {key: 'places_dispo', label: 'Places disponibles'},
+                    {key: 'nombre_place', label: 'Places'},
+                    {key: 'nombre_place_dispo', label: 'Places disponibles'},
                     {key: 'libelle_etat', label: 'etat',  sortable: true, sortDirection: 'desc'},
                     {key: 'actions', label: 'Actions'},
                 ],
@@ -470,6 +473,8 @@
                                 moyen_transport: this.name_transport(voyage.moyen_transport),
                                 nombre_place: voyage.nombre_place,
                                 etat: voyage.etat,
+                                nombre_place: voyage.nombre_place,
+                                nombre_place_dispo: voyage.nombre_place,
                                 libelle_etat: this.libelle_etat(voyage.etat),
                                 image: voyage.image,
                                 heure_depart: voyage.heure_depart,
@@ -492,7 +497,7 @@
 
             all_voyage(page, par_page){
                 axios.get('/voyage?page='+page+'&parPage='+par_page)
-                    .then( (response) => {
+                    .then((response) => {
                         this.pagination_backend.count = response.data.content.pagination.count;
                         this.pagination_backend.page = response.data.content.pagination.current_page;
                         this.pagination_backend.par_page = response.data.content.pagination.per_page;
@@ -528,7 +533,6 @@
         },
     }
 </script>
-
 
 <style scoped>
 

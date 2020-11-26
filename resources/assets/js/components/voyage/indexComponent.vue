@@ -21,16 +21,16 @@
             </div>
             <hr>
             <template v-if="list">
-                <liste-voyage></liste-voyage>
+                <liste-classe></liste-classe>
             </template>
             <template v-if="update">
-                <update-voyage :voyage=voyage_update></update-voyage>
+                <update-classe :classe=classe_update></update-classe>
             </template>
             <template v-if="create">
-                <create-voyage></create-voyage>
+                <create-classe></create-classe>
             </template>
             <template v-if="detail">
-                <detail-voyage :voyage="voyage_detail"></detail-voyage>
+                <detail-classe :classe="classe_detail"></detail-classe>
             </template>
         </div>
     </div>

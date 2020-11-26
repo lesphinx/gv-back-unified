@@ -121,7 +121,14 @@ Vue.component('update-province', require('./components/province/Update.vue'));
 
 
 Vue.component('commentaire', require('./components/commentaire/Index.vue'));
-Vue.component('classe', require('./components/classe/Index.vue'));
+
+
+Vue.component('index-classe' , require('./components/classe/IndexComponent'));
+Vue.component('update-classe' , require('./components/classe/updateComponent'));
+Vue.component('create-classe' , require('./components/classe/createComponent'));
+Vue.component('detail-classe' , require('./components/classe/detailComponent'));
+Vue.component('liste-classe' , require('./components/classe/listeComponent'));
+
 
 
 Vue.component('article-list', require('./components/articles/Index.vue'));
@@ -222,6 +229,7 @@ Vue.component('create-voyage' , require('./components/voyage/createComponent'));
 Vue.component('detail-voyage' , require('./components/voyage/detailComponent'));
 Vue.component('liste-voyage' , require('./components/voyage/listeComponent'));
 Vue.component('imageComponent' , require('./components/voyage/imageComponent'));
+
 
 Vue.component('location', require('./components/location/IndexComponent'));
 Vue.component('liste-location', require('./components/location/listComponent'));

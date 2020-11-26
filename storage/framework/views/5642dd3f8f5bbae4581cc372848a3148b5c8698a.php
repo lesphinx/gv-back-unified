@@ -207,10 +207,7 @@
                 </li>
 
             <?php endif; ?>
-            <?php endif; ?>
-                   
-
-        
+            <?php endif; ?>                         
 
             <?php if($user->hasAnyAccess(['user.*'])): ?>
             <li><a  data-toggle="collapse" href="#user"><i class="fa fa-users"></i>Utilisateurs <span class="fa fa-chevron-down"></span></a>
@@ -256,11 +253,11 @@
                                 <li><a href="#level1_1">Mon compte</a></li>
 
 
-                                <?php if($user->inRole('partenaire') || $user->inRole('Partenaire')): ?>
-
-                                        <li><a href="#level1_1">Accès</a></li>
-
+                                <?php if($user->inRole('partenaire') || $user->inRole('Partenaire') || $user->inRole('admin') || $user->inRole('super-admin')): ?>
+                                    <li><a href="#level1_1">Accès</a></li>
                                 <?php endif; ?>
+
+                                <li><a href="<?php echo e(route('pages.classe')); ?>">Classe</a></li>
 
                                 <?php if($user->inRole('admin') || $user->inRole('super-admin')): ?>
 

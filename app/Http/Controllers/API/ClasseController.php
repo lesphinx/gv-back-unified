@@ -5,7 +5,10 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Resources\Classe as ClasseResource;
 use App\Classe;
+use App\Partenaire;
 use Illuminate\Http\Request;
+use Sentinel;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,8 @@ class ClasseController extends Controller
      */
     public function index()
     {
+
+        $partenaire  = Partenaire::where('utilisateur', '=', Sentinel::getUser()->id)->first();
 
                 if(!ClasseResource::collection(Classe::all())->isEmpty()){
                    fetchLog(Classe::class);
@@ -67,7 +72,6 @@ class ClasseController extends Controller
             'libelle.string' => 'Le champ libelle doit contenir des chaines de charactères !',
             'libelle.min' => 'Le champ libelle doit contenir au moins deux charactères !',
             'libelle.max' => 'Le champ libelle ne doit pas exceder 100 charactères !',
-
         ];
 
         $validator = Validator::make($request->all(), $rules,$messages);
@@ -82,11 +86,12 @@ class ClasseController extends Controller
             );
         }
 
-       if (Classe::create($data)) {
-                 createLog(Classe::class);
-                  return response()->json(['message' => ' Classe crée avec succès'],200,['Content-Type'=>'application/json']);
+       if (Classe::create($data)) 
+       {
+            createLog(Classe::class);
+            return response()->json(['message' => ' Classe crée avec succès'],200,['Content-Type'=>'application/json']);
 
-              }
+        }
        createFailureLog( Classe::class);
        return response()->json(['message'=>'echec de création Classe']);
     }

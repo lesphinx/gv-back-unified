@@ -46,6 +46,7 @@ Route::get('ville', 'API\\VilleController@index')->name('api.liste-ville');
 Route::get('pays', 'API\\PaysController@index')->name('api.liste-pays');
 Route::get('classe', 'API\ClasseController@index')->name('api.liste-classe');
 
+
 Route::get('itineraire/{slug}', 'API\\ItineraireController@show')->name('api.detail-itineraire');
 Route::get('get-voyage','API\\VoyageController@getVoyages')->name('api.creation-voyage-home');
 Route::get('site', 'API\\SiteController@index')->name('api.liste-sitetouristique');

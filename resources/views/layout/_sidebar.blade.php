@@ -204,10 +204,7 @@
                 </li>
 
             @endif
-            @endif
-                   
-
-        
+            @endif                         
 
             @if ($user->hasAnyAccess(['user.*']))
             <li><a  data-toggle="collapse" href="#user"><i class="fa fa-users"></i>Utilisateurs <span class="fa fa-chevron-down"></span></a>
@@ -253,11 +250,11 @@
                                 <li><a href="#level1_1">Mon compte</a></li>
 
 
-                                @if($user->inRole('partenaire') || $user->inRole('Partenaire'))
-
-                                        <li><a href="#level1_1">Accès</a></li>
-
+                                @if($user->inRole('partenaire') || $user->inRole('Partenaire') || $user->inRole('admin') || $user->inRole('super-admin'))
+                                    <li><a href="#level1_1">Accès</a></li>
                                 @endif
+
+                                <li><a href="{{ route('pages.classe') }}">Classe</a></li>
 
                                 @if($user->inRole('admin') || $user->inRole('super-admin'))
 

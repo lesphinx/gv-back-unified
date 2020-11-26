@@ -179,19 +179,22 @@
                     <div class="row">
                         <div class="col-4"><b>Classe</b></div>
                         <div class="col-3"><b>Prix enfant (F CFA)</b></div>
-                        <div class="col-3"><b>Prix Adulte (F CFA)</b></div>
+                        <div class="col-3"><b>Prix adulte (F CFA)</b></div>
                     </div>
                     <hr>
                     <div class="row" v-for="(classe, index) in classes" :key="index">
-                        <div class="col-4"><b-form-input size="sm" type="text" placeholder="Entrez le nom de la classe">
-                            </b-form-input><!--b>{{classe.libelle}}</b--></div>
-                        <div class="col-3">
-                            <b-form-input size="sm" v-model="form_voyage.tarif[index].prix_enfant" placeholder="Entrez le prix enfant" type="number">
-                            </b-form-input>
+                        <div class="col-4">
+                            <select class="form-control">
+                                <option value="null" disabled selected >-- Choisir une classe --</option>
+                                <option>1ere</option>
+                                <option>Seconde</option>
+                            </select>                            <!--b>{{classe.libelle}}</b-->
                         </div>
                         <div class="col-3">
-                            <b-form-input size="sm"  v-model="form_voyage.tarif[index].prix_adulte" placeholder="Entrez le prix adulte" type="number">
-                            </b-form-input>
+                            <b-form-input size="sm" v-model="form_voyage.tarif[index].prix_enfant" placeholder="Entrez le prix enfant" type="number"></b-form-input>
+                        </div>
+                        <div class="col-3">
+                            <b-form-input size="sm"  v-model="form_voyage.tarif[index].prix_adulte" placeholder="Entrez le prix adulte" type="number"></b-form-input>
                         </div>
                             
                         <hr>
@@ -256,12 +259,16 @@
                 </b-container>
 
                 <b-row slot="modal-footer" class="w-100" fluid>
-                    <div class="col-4"><b-button block variant="danger" @click="showModalVille=false" >
-                        Annuler
-                    </b-button></div>
-                    <div class="col-4 offset-3"><b-button type="submit" block variant="success" @click="addVille" >
-                        Valider
-                    </b-button> </div>
+                    <div class="col-4">
+                        <b-button block variant="danger" @click="showModalVille=false" >
+                            Annuler
+                        </b-button>
+                    </div>
+                    <div class="col-4 offset-3">
+                        <b-button type="submit" block variant="success" @click="addVille" >
+                            Valider
+                        </b-button> 
+                    </div>
                     <div class="col-1"></div>
                 </b-row>
             </b-modal>
